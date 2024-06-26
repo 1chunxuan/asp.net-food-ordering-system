@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Assignment.admin" %>
+<link rel="stylesheet" href="admin.css" />
+<script src="https://kit.fontawesome.com/4f80857e9d.js" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">s
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 247px;
+        }
+
+        html {
+            background-image: url(images/adminBackground.jpg);
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <main>
+            <div class="logo" style="width:280px";>
+                <a href="adminHome.aspx" class="home">
+                    <img src="images/logo-removebg.png" class="auto-style1" />
+                </a>
+                <hr />
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="adminHome.aspx" class="nav-link">
+                            <i class="fa-solid fa-house" style="color: #ffffff; padding:10px;"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminCust.aspx" class="nav-link">
+                            <i class="fa-regular fa-user" style="color: #ffffff; padding:10px;"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adminProduct.aspx" class="nav-link">
+                            <i class="fa-solid fa-bowl-food" style="color: #ffffff; padding:10px;"></i>
+                            Products
+                        </a>
+                    </li>
+                        <li class="nav-item">
+                        <a href="admin.aspx" class="nav-link">
+                            <i class="fa-solid fa-calendar-days" style="color: #ffffff; padding:10px;"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="home.aspx" class="nav-link">
+                            <i class="fa-solid fa-file" style="color: #ffffff; padding: 10px;"></i>
+                            User Side
+                        </a>
+                    </li>
+                    <li class="nav-item">
+     <asp:Button ID="btnLogout" runat="server" OnClick="Logout_Click" style="color: #ffffff; padding: 10px;" class="nav-link" />
+
+    </a>
+</li>
+                </ul>
+                <hr />
+            </div>
+                <div class="sitemap">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator=" ➤ ">
+                        <CurrentNodeStyle ForeColor="Black" />
+                        <NodeStyle Font-Underline="False" ForeColor="Black" />
+                        <RootNodeStyle Font-Underline="False" ForeColor="Black" />
+                    </asp:SiteMapPath>
+                </div>
+                <div class="menu">
+                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Visible="False"></asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </div>
+                <div class="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+        </main>
+        </div>
+    </form>
+</body>
+</html>
